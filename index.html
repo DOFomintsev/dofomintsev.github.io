@@ -8,6 +8,8 @@
 <meta name="description" content="NicePrice — сервис подбора выгодных предложений и сравнения цен на популярные товары.">
 <meta name="robots" content="index, follow">
 
+<link rel="icon" type="image/png" href="favicon.png">
+
 <style>
 body{
   margin:0;
@@ -15,6 +17,12 @@ body{
   background:#000;
   color:#fff;
   text-align:center;
+  opacity:0;
+  animation:fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn{
+  to{opacity:1;}
 }
 
 .container{
@@ -45,11 +53,12 @@ p{
   font-weight:700;
   border-radius:16px;
   text-decoration:none;
-  transition:.2s;
+  transition:.25s;
 }
 
 .button:hover{
   transform:scale(1.05);
+  box-shadow:0 0 25px rgba(29,185,84,0.4);
 }
 
 .section{
@@ -58,10 +67,24 @@ p{
   max-width:800px;
   margin-left:auto;
   margin-right:auto;
+  opacity:0;
+  transform:translateY(20px);
+  animation:slideUp .8s ease forwards;
+}
+
+.section:nth-child(3){ animation-delay:.2s;}
+.section:nth-child(4){ animation-delay:.4s;}
+
+@keyframes slideUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 .section h2{
   margin-bottom:15px;
+  color:#1DB954;
 }
 
 footer{
@@ -69,11 +92,11 @@ footer{
   padding:40px 20px;
   border-top:1px solid rgba(255,255,255,0.08);
   font-size:14px;
-  opacity:.6;
+  opacity:.7;
 }
 
 .footer-links{
-  margin-bottom:15px;
+  margin-bottom:20px;
 }
 
 .footer-links a{
@@ -86,8 +109,49 @@ footer{
 
 .footer-links a:hover{
   opacity:1;
+  color:#1DB954;
+}
+
+.social-icons{
+  margin-bottom:15px;
+}
+
+.social-icons a{
+  margin:0 8px;
+  display:inline-block;
+  transition:.2s;
+}
+
+.social-icons svg{
+  width:22px;
+  height:22px;
+  fill:#fff;
+  opacity:.7;
+}
+
+.social-icons a:hover svg{
+  fill:#1DB954;
+  opacity:1;
 }
 </style>
+
+<!-- 🔥 Яндекс Метрика -->
+<!-- ВСТАВЬ СВОЙ ID вместо XXXXXXXX -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){
+   m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+   k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(XXXXXXXX, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </head>
 
 <body>
@@ -97,8 +161,7 @@ footer{
 <h1>NicePrice</h1>
 
 <p>
-NicePrice — сервис подбора выгодных предложений и сравнения цен на популярные товары.
-Мы помогаем пользователям находить лучшие предложения на маркетплейсах.
+Сервис подбора выгодных предложений и сравнения цен на популярные товары.
 </p>
 
 <a href="https://t.me/NiceGadget_Bot" class="button">
@@ -108,24 +171,30 @@ NicePrice — сервис подбора выгодных предложени�
 <div class="section">
 <h2>О сервисе</h2>
 <p>
-Сервис анализирует предложения маркетплейсов и помогает быстро находить актуальные варианты.
-NicePrice не является продавцом товаров и не осуществляет онлайн-продажи.
+NicePrice помогает находить актуальные предложения маркетплейсов.
+Сайт не является продавцом и не осуществляет онлайн-продажи.
 </p>
 </div>
 
 <div class="section">
 <h2>Как это работает</h2>
 <p>
-Пользователь выбирает товар → получает подборку предложений → переходит на сайт продавца для покупки.
+Вы выбираете товар → получаете подборку предложений → переходите на сайт продавца.
 </p>
 </div>
 
 <footer>
 
 <div class="footer-links">
-<a href="/privacy.html">Политика конфиденциальности</a>
-<a href="/terms.html">Пользовательское соглашение</a>
+<a href="/privacy.html">Политика</a>
+<a href="/terms.html">Соглашение</a>
 <a href="/contacts.html">Контакты</a>
+</div>
+
+<div class="social-icons">
+<a href="https://t.me/NiceGadget_Bot" target="_blank">
+<svg viewBox="0 0 24 24"><path d="M9.04 15.47l-.38 4.13c.54 0 .78-.23 1.07-.5l2.56-2.44 5.3 3.87c.97.53 1.66.25 1.91-.9l3.46-16.2c.33-1.53-.55-2.13-1.5-1.78L1.2 9.29c-1.48.58-1.46 1.4-.25 1.77l4.86 1.52L18.1 4.96c.56-.34 1.08-.15.66.19"/></svg>
+</a>
 </div>
 
 © 2026 NicePrice. Все права защищены.
